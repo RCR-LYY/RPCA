@@ -53,6 +53,6 @@ def CaT_GIP():
     hs2 = np.hstack((np.transpose(A),miRNA))
     vs1 = np.vstack((hs1,hs2))
     # Save data
-    np.savetxt(r'T-GIP.txt', vs1, fmt='%e')s
+    np.savetxt(r'T-GIP.txt', vs1, fmt='%e')
 
 
