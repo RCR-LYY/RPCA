@@ -3,6 +3,10 @@ import copy
 import ipdb
 import time
 
+T = np.loadtxt(r'T-GIP1.txt', dtype=float)
+SM = np.loadtxt(r"SM similarity matrix.txt",dtype=float)
+miRNA = np.loadtxt(r"miRNA similarity matrix.txt",dtype=float)
+
 def DC(D,mu,T0,g):
     U,S,V = np.linalg.svd(D)
     T1 = np.zeros(np.size(T0))
@@ -69,4 +73,5 @@ def GAMA(H): # H = L+S
         RRE = sigma/np.linalg.norm(H,'fro')
         if RRE < tol:
             break
-    return L
+    M_1 = L[0:SM.shape[0], SM.shape[0]:T.shape[1]]
+    return M_1
