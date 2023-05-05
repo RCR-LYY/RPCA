@@ -30,7 +30,7 @@ def InSm(sm1, sm2, w):
     simm = w * sm1 + (1-w) * sm2
     return simm
 
-def CaT_GIP(w):
+def CaT_GIP():
     w = 0.2
 
     A = np.loadtxt(r"SM-miRNA association matrix.txt", dtype=int)
