@@ -53,7 +53,7 @@ def errorsol(Y_1,H_1,L_1,lamb,mu,type):
     return E
 
 
-def GAMA(H): # H = L+S
+def GAMA():
     muzero = 8 #18 for Dataset 2
     mu = muzero
     gamma = 0.01
