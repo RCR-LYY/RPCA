@@ -1,3 +1,9 @@
+# -*- codeing = utf-8 -*-
+# @Time : 2023/3/11 16:20
+# @Author : Chuanru Ren
+# @File : FAMCSMMA.py
+# @Software: PyCharm
+
 import copy
 import numpy as np
 import math
@@ -32,21 +38,21 @@ def InSm(sm1, sm2, w):
 
 def CaT_GIP():
     w = 0.2
-
-    A = np.loadtxt(r"SM-miRNA association matrix.txt", dtype=int)
+    # Load Dataset 1
+    M = np.loadtxt(r"SM-miRNA association matrix.txt", dtype=int)
     SM = np.loadtxt(r"SM similarity matrix.txt",dtype=float)
     miRNA = np.loadtxt(r"miRNA similarity matrix.txt",dtype=float)
-
-    B = GIP_sm(A)
-    C = GIP_m(A)
-
-    SM = InSm(copy.deepcopy(SM),copy.deepcopy(B),w)
-    miRNA = InSm(copy.deepcopy(miRNA),copy.deepcopy(C),w)
-
+    # Calculate the GIPK similarity
+    GIPK_sm = GIP_sm(A)
+    GIPK_m = GIP_m(A)
+    # Similarity integration
+    SM_new = InSm(copy.deepcopy(SM),copy.deepcopy(GIPK_sm),w)
+    miRNA_new = InSm(copy.deepcopy(miRNA),copy.deepcopy(GIPK_m),w)
+    # Construct the adjacency matrix of the heterogeneous SM-miRNA network
     hs1 = np.hstack((SM,A))
     hs2 = np.hstack((np.transpose(A),miRNA))
     vs1 = np.vstack((hs1,hs2))
-
-    np.savetxt(r'T-GIP.txt', vs1, fmt='%e')
+    # Save data
+    np.savetxt(r'T-GIP.txt', vs1, fmt='%e')s
 
 
