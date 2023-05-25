@@ -1,8 +1,8 @@
-# FAMCSMMA
+# RPCAΓNR
 
 ## Method Description
 
-FAMCSMMA is a fast and efficient method based on RPCA framework to predict potential associations between small molecule drugs and miRNAs . The datasets and codes for the model are released on this page.
+RPCAΓNR is a fast and efficient method based on RPCA framework to predict potential associations between small molecule drugs and miRNAs . The datasets and codes for the model are released on this page.
 
 ## Operating Environment
 
