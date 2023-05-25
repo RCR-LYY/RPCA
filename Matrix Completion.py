@@ -1,7 +1,7 @@
 # -*- codeing = utf-8 -*-
 # @Time : 2023/3/11 16:20
 # @Author : Chuanru Ren
-# @File : FAMCSMMA.py
+# @File : RPCAΓNR.py
 # @Software: PyCharm
 
 import numpy as np
